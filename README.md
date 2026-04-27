@@ -52,13 +52,9 @@ Avaliação sistemática de prompts e LLMs:
 cd [pasta-do-capítulo]
 
 # Criar ambiente virtual
-python -m venv venv
+py -3.12 -m venv venv
 
 # Ativar ambiente virtual
-# No macOS/Linux:
-source venv/bin/activate
-
-# No Windows:
 venv\Scripts\activate
 ```
 
@@ -66,6 +62,7 @@ venv\Scripts\activate
 
 ```bash
 pip install -r requirements.txt
+pip install langchain_google_genai
 ```
 
 ### 3. Configuração das Variáveis de Ambiente

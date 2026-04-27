@@ -1,6 +1,7 @@
 
-from langchain_openai import ChatOpenAI
-from langchain.prompts import ChatPromptTemplate
+# from langchain_openai import ChatOpenAI
+from langchain_google_genai import ChatGoogleGenerativeAI
+from langchain_core.prompts import ChatPromptTemplate
 from utils import print_llm_result
 from dotenv import load_dotenv
 load_dotenv()
@@ -18,7 +19,8 @@ chat_prompt = ChatPromptTemplate([system, user])
 chat_prompt2 = ChatPromptTemplate([system2, user])
 messages = chat_prompt.format_messages()
 
-model = ChatOpenAI(model="gpt-4o")
+# model = ChatOpenAI(model="gpt-4o")
+model = ChatGoogleGenerativeAI(model="gemini-2.5-flash-lite")
 result = model.invoke(messages)
 print_llm_result(str(system), result)
 

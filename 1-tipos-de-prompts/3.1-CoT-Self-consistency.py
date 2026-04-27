@@ -1,4 +1,5 @@
-from langchain_openai import ChatOpenAI
+# from langchain_openai import ChatOpenAI
+from langchain_google_genai import ChatGoogleGenerativeAI
 from dotenv import load_dotenv
 from utils import print_llm_result
 
@@ -20,8 +21,9 @@ If there are 3 different answers, ONLY reply: "I can't find a consistent answer"
 
 
 # llm = ChatOpenAI(model="gpt-3.5-turbo")
-llm = ChatOpenAI(model="gpt-4o")
+# llm = ChatOpenAI(model="gpt-4o")
 # llm = ChatOpenAI(model="gpt-5-nano") # reasoning model
+llm = ChatGoogleGenerativeAI(model="gemini-2.5-flash-lite")
 
 
 response1 = llm.invoke(msg1)
